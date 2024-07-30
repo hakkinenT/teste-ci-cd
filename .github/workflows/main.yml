@@ -7,13 +7,10 @@ on:
 jobs:
   build-deploy:
     name: build and deploy spring-api
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-
-      - name: setup jdk 21
-        uses: actions/setup-java@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: 21
